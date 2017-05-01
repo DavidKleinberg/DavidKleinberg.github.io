@@ -1,0 +1,176 @@
+---
+---
+$bg-color: #6b4669;
+$bg-highlight-color: #f7b7f4;
+$bg-dark-color: #4d314b;
+$fg-color: #c5afc4;
+$fg-inverted-color: #80547e;
+$fg-text-color: #e4cfe3;
+$highlight-color: #eebc4f;
+
+body {
+  background: $bg-color;
+  width: 944px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.header-logo {
+  background: $bg-highlight-color;
+  color: $bg-color;
+  padding: .8rem;
+  font: normal 1.8rem/2.2rem 'Gobold Bold', sans-serif;
+  text-decoration: none;
+  border-radius: 100%;
+  display: block;
+  float: left;
+}
+
+.header-nav {
+  text-align: right;
+  height: 100%;
+  vertical-align: middle;
+  line-height: 55px;
+}
+
+.header-nav li {
+  display: inline;
+}
+
+.hero {
+  /*background: url("https://webdev.acm.jhu.edu/assets/laptop.png") center bottom no-repeat;
+  padding-bottom: 190px;*/
+  padding-bottom: 3rem; 
+}
+
+.hero-group,
+.hero-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-group {
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  margin: 4rem 0;
+}
+
+.hero-headshot {
+  border-radius: 100%;
+  border: 3px solid $bg-highlight-color;
+  margin-right: 1rem;
+}
+
+.hero-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-heading {
+  color: $bg-highlight-color;
+  font: normal 2rem/3rem 'Gobold Bold', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.hero-subheading {
+  color: $highlight-color;
+  font: normal 1.5rem/2rem 'Montserrat', sans-serif;
+}
+
+.content {
+  background: $fg-color;
+  border-top: 3px solid $highlight-color;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, .25);
+}
+
+.content-header {
+  padding: 2rem;
+}
+
+.content-heading {
+  color: $bg-dark-color;
+  font: normal 1.7rem/2rem 'Gobold Thin', sans-serif;
+}
+
+.content-body {
+  background: $fg-inverted-color;
+  border-top: 3px solid $highlight-color;
+  padding: 3rem;
+  font: normal 1rem/1.7rem 'Montserrat', sans-serif;
+  color: $fg-text-color;
+}
+
+.content-actions {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.footer {
+  color: $highlight-color;
+  text-align: center;
+  padding: 2rem 0;
+  font: normal 0.8rem/1rem 'Montserrat', sans-serif;
+}
+
+.pill-btn {
+  font-weight: normal;
+  font-family: 'Gobold Thin', sans-serif;
+  //font: normal 'Gobold Thin', sans-serif; this would override the font size for every place we put the button
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
+.header .pill-btn {
+  color: rgba($bg-highlight-color, .8);
+  border-color: $bg-highlight-color;
+  font-size: .9rem;
+  padding: .35rem 1rem;
+  letter-spacing: 0.15rem;
+}
+
+.hero .pill-btn,
+.content-action .pill-btn {
+  color: rgba($bg-highlight-color, .8);
+  border-color: $highlight-color;
+  padding: .5rem 1.6rem;
+  letter-spacing: .2rem;
+}
+
+.content-action .pill-btn {
+  padding: .3rem 0.9rem;
+  letter-spacing: .15rem;
+}
+
+.content-group .pill-btn {
+  color: #eebc4f;
+  border-color: #eebc4f;
+  padding: .2rem 1.0rem;
+  letter-spacing: .2rem;
+}
+
+.page {
+  font-family: 'Gobold Thin', sans-serif;
+  text-align: center;
+  margin-left: 7rem;
+  margin-right: 7rem;
+  color: #eebc4f;
+  line-height: 30px;
+}
+
+.page .video {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  padding: 2rem;
+  background:$bg-dark-color;
+}
