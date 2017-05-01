@@ -1,1 +1,19 @@
-Hello World
+---
+layout: home
+---
+{% for post in site.posts %}
+
+<div class = "content-group">
+    <div class = "content-header">
+      <h3 class="content-heading">{{post.title}}</h3>
+      <h4 class="content-subheading">{{ post.date | date: "%b %-d, %Y" }}</h4>
+    </div>
+    <div class = "content-body">
+      {{post.excerpt}}
+      <div class = "content-actions">
+     <a href="{{post.url}}" class = "pill-btn">ReadMore</a>
+      </div>
+        
+    </div> 
+  </div>
+ {%endfor%}
