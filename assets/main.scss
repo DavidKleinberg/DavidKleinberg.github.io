@@ -172,12 +172,30 @@ body {
   font-size: 7rem;
 }
 
-.page .picture {
+.page .picture, .description {
   padding: 4rem;
 }
 
+.page .picture .HalfMarathon {
+  border-radius: 100%;
+  border: 3px solid #f7b7f4;
+  margin-right: 1rem;
+}
+
+.page .gitcat {
+  background: url("https://cloud.githubusercontent.com/assets/21249755/25603071/d0d6921a-2ec6-11e7-8a09-24af43c2dcc1.png");
+  padding: 3rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+
 .page .chess-game {
-  padding: 2rem;
+  background: url("https://bitbucket-marketing-cdn.atlassian.com/dam/jcr:1437c132-1dbc-410d-b6a6-cb7fce8f2775/bitbucket_rgb_darkblue_atlassian_1200x630.png");
+  padding: 5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
 }
 
 .page .video {
