@@ -118,6 +118,7 @@ body {
   text-align: center;
   padding: 2rem 0;
   font: normal 0.8rem/1rem 'Montserrat', sans-serif;
+  margin-top: 2rem;
 }
 
 .pill-btn {
@@ -197,9 +198,18 @@ body {
   border-radius: 2rem;
 }
 
+.page .say2eat {
+  background: url("https://cloud.githubusercontent.com/assets/21249755/25604292/6741ecfa-2ed0-11e7-99ef-1abdc2110ab2.png");
+  padding: 3rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+
 .page .video {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   padding: 2rem;
+  margin-bottom: 4rem;
   background:$bg-dark-color;
 }
