@@ -172,9 +172,14 @@ body {
   font-size: 7rem;
 }
 
-//.page .picture {
-//  padding: 4rem;
-//}
+.page .picture {
+  padding: 4rem;
+}
+
+.page .chess-game {
+  padding: 2rem;
+  background: red;
+}
 
 .page .video {
   margin-left: 0.5rem;
