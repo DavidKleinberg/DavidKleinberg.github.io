@@ -162,15 +162,23 @@ body {
 .page {
   font-family: 'Gobold Thin', sans-serif;
   text-align: center;
-  margin-left: 7rem;
-  margin-right: 7rem;
   color: #eebc4f;
   line-height: 30px;
 }
 
+.page .title {
+  text-align: center;
+  padding: 4rem;
+  font-size: 7rem;
+}
+
+.page .picture {
+  padding: 4rem;
+}
+
 .page .video {
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   padding: 2rem;
   background:$bg-dark-color;
 }
