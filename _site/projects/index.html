@@ -13,9 +13,6 @@
 
       <link rel="stylesheet" href="/assets/main.css">
 
-      <script type="text/javascript" src = "/assets/script.js"></script>
-
-  
 </head>
 
 <body>
@@ -28,7 +25,7 @@
   </ul>
 </div>
 
-<div class = "page">
+<div class = "page" id = "page">
 
   <div class = "title">
 	 <p>PROJECTS<br /><br /></p>
@@ -50,6 +47,8 @@
     <p>Checkout my data structures code on Github!</p>
   </div>
 
+<!--<pre><code class="javascript"><code class="keyword">function</code> <code class="name">foo</code>()-->
+
   <a href = "https://github.com/DavidKleinberg/DataStructures" class = "gitcat"> </a>
 
   <div class = "description">
@@ -60,10 +59,26 @@
 
 </div>
 
+  <div class = "coding">
+    <button id = "chess-btn" onclick = "playChess()"> PLAY CHESS </button>
+    <!--<button type = "button" id = "chessbtn">PLAY CHESS</button>-->
+    <!--<button id = "chessbtn" onclick="playChess()">PLAY CHESS</button>-->
+    <!--<input type="button" onclick="playChess();" value="Click Me!"/>-->
+  </div>
+
+  <div class = "chess-game">
+    <p id = "chess-output" class = "chess-output"></p>
+  </div>
+
+  <div class = "chess-input">
+    <input type = "text" id = "chess-input" name = "chess-input" placeholder = "Please enter your move">
+  </div>
+
+
 <div class = "footer">
   <p>&copy; 2017 David Kleinberg</p>
 </div>
   
-  
+<script type="text/javascript" src = "./projects.js/"></script>
 </body>
 </html>

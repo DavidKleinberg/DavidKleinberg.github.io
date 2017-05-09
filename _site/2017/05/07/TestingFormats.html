@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>TAMID at Johns Hopkins University</title>
+  <title>Testing Formats</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
@@ -29,14 +29,19 @@
 <div class="content">
 <div class = "content-group">
     <div class = "content-header">
-      <h3 class="content-heading">TAMID at Johns Hopkins University</h3>
-      <h4 class="content-subheading">Jan 26, 2017</h4>
+      <h3 class="content-heading">Testing Formats</h3>
+      <h4 class="content-subheading">May 7, 2017</h4>
     </div>
     <div class = "content-body">
-      <p>Project Leader for Say2Eat Consulting, Recruitment Director for JHU Chapter, Business Consultant for Welltika</p>
+      <p> Hello </p>
 
-<p>Winner of national competition: Recipient of monetary award for “Best Market Research Deliverable” and featured on Tamid Nationals’ website for outstanding Project Manager.</p>
-
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">show</span>
+  <span class="vi">@widget</span> <span class="o">=</span> <span class="no">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+  <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+    <span class="nb">format</span><span class="p">.</span><span class="nf">html</span> <span class="c1"># show.html.erb</span>
+    <span class="nb">format</span><span class="p">.</span><span class="nf">json</span> <span class="p">{</span> <span class="n">render</span> <span class="ss">json: </span><span class="vi">@widget</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
     </div> 
   </div>
 </div>

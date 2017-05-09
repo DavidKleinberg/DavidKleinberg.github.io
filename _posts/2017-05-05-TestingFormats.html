@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Testing Formats"
+date:   2017-05-07 13:26:05 -0500
+---
+
+<p> Hello </p>
+
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}

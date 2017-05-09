@@ -213,3 +213,53 @@ body {
   margin-bottom: 4rem;
   background:$bg-dark-color;
 }
+
+.testbtn {
+  padding: 2rem;
+  background: red;
+}
+
+.coding {
+  padding: 3rem;
+  /*background: $bg-dark-color;*/
+  text-align: center;
+}
+
+.chess-game {
+  padding: 5rem;
+  background: $bg-dark-color;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 8rem;
+  margin-right: 8rem;
+}
+
+button[id = "chess-btn"] {
+  background-color: #8faee0;
+  border-radius: 4px;
+  border: none;
+  color: yellow;
+  /*padding-right: 5rem;
+  padding-left: 5rem;*/
+  height: 3rem;
+  width: 10rem;
+
+}
+
+.chess-input {
+  padding: 2rem;
+  text-align: center;
+  margin-left: 8rem;
+  margin-right: 8rem;
+}
+
+input[name = chess-input] {
+  background-color: #8faee0;
+  border: none;
+  border-radius: 3px;
+  width: 15rem;
+  height: 3rem;
+  text-align: center;
+  color: yellow;
+}
+
