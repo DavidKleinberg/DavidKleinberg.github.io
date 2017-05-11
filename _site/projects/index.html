@@ -323,7 +323,8 @@ function playChess() {
     frame.className = "frame";
     frame.style.borderStyle = 'solid';
     frame.style.borderColor = '#f4b942';
-    frame.style.borderWidth = '.2rem';
+    frame.style.borderWidth = '1.5rem';
+    frame.style.borderRadius = "2%";
     frame.style.display = 'inline-block';
     frame.style.lineHeight = '0rem';
     output.appendChild(frame);
@@ -355,6 +356,9 @@ function playChess() {
           color1 = color2;
           color2 = temp;
         }
+          var temp = color1;
+          color1 = color2;
+          color2 = temp;
         frame.innerHTML += "<br/>"; 
     }
 }
