@@ -71,7 +71,7 @@
   </div>
 
   <div class = "chess-input">
-    <input type = "text" id = "chess-input" name = "chess-input" placeholder = "Please enter your move">
+    <input type = "text" id = "chess-input" name = "chess-input" placeholder = "Please enter your move" onkeydown = "checkInput()">
   </div>
 
 
@@ -80,7 +80,8 @@
 </div>
 
 <script type="text/javascript">
-  var output = document.getElementById("chess-output");
+
+var output = document.getElementById("chess-output");
 var clicked = false;
 
 PieceEnum = {
@@ -96,13 +97,6 @@ Player = {
     WHITE : 0,
     BLACK : 1
 };
-
-/*var Position = {
-    x : 0,
-    y : 0, 
-    Position: function(xx, yy) { x = xx; y = yy; }
-
-};*/
 
 class Position {
     constructor(x, y) {
@@ -209,8 +203,109 @@ function initPiece(id, owner, position) {
     //output.innerHTML += " id: " + boardPieces[index(position)].id + "<br />";
 }
 
-function index(position) {
-    return position.y * 8 + position.x;
+function checkInput() {
+  var input = document.getElementById("chess-input");
+  if(event.keyCode == 13) {
+      //window.alert("entered");
+      //directUserInput();
+      directUserInput(input.value);
+      input.value = "";
+  }
+}
+
+function directUserInput(input) {
+
+    var command = {};
+
+    command["q"] = 'q';
+    command["board"] = 'b';
+    command["save"] = 's';
+    command["forfeit"] ='f';
+    command["castle"] = 'c';
+
+    var selection;
+
+    if (input in command) {
+        selection = command[input];
+    } else {
+        selection = 'd';
+    }
+    switch (selection) {
+    case 'q':
+        break;
+
+    case 'b':
+        /*changeBoardStatus();
+        if (getBoardStatus()) {
+            displayBoard();
+        }*/
+        break;
+
+    case 's':
+    {
+        /*string filename;
+        Prompts::saveGame();
+        cin >> filename;
+
+        //std::ofstream outputFile(filename, std::ofstream::out);
+        std::ofstream outputFile;
+        outputFile.open(filename);
+
+        if (!outputFile.is_open()) {
+            Prompts::saveFailure();
+            return;
+        }
+
+        outputFile << "chess\n" << this->m_turn - 1 << endl;
+
+        for (int y = 0; y < 8; y++) {
+            for (int x = 0; x < 8; x++) {
+                Piece* p = this->getPiece(Position(x,y));
+                if (p) {
+                    outputFile << p->owner() << " " << char(x+97) << y+1 << " " << p->id() << endl;
+                }
+            }
+        }
+
+        outputFile.close();
+        input = "q";*/
+    }
+    break;
+
+    case 'f':
+
+        //Prompts::win((Player)!playerTurn(), turn());
+        //Prompts::gameOver();
+        input = "q";
+
+        break;
+
+    case 'c':
+
+        break;
+
+    case 'd':
+    {
+        /*var fromCol;
+        var toCol;
+        var fromRow;
+        var toRow;
+
+        if (sscanf(input, "%c %d %c %d", &fromCol, &fromRow, &toCol, &toRow) == 4) {
+            var stat = makeMove(Position((int)(fromCol)-97, fromRow-1), Position((int)(toCol)-97, toRow-1));
+            //if ((status)stat == MOVE_CHECKMATE || (status)stat == MOVE_STALEMATE) {
+            //    input = "q";
+    //if (getBoardStatus())
+      //displayBoard();
+                break;
+            }
+        } else {
+            //Prompts::parseError();
+            output.innerHTML += "Could not parse";
+        }*/
+    }
+    break;
+    }
 }
 
 
@@ -223,6 +318,7 @@ function playChess() {
     var blackSymbol = ["\u265F", "\u265C", "\u265E", "\u265D", "\u265B", "\u265A"];
 
     setupBoard();
+
     var frame = document.createElement("div");
     frame.className = "frame";
     frame.style.borderStyle = 'solid';
