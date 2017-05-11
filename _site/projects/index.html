@@ -188,6 +188,8 @@ function playChess() {
     }
     clicked = true;
     var pieceSymbol = ["P", "k", "R", "B", "Q", "X"];
+    var whiteSymbol = ["\u2659", "\u2656", "\u2658", "\u2657", "\u2655", "\u2654"];
+    var blackSymbol = ["\u265F", "\u265C", "\u265E", "\u265D", "\u265B", "\u265A"];
 
     setupBoard();
     var frame = document.createElement("div");
@@ -209,8 +211,8 @@ function playChess() {
     for (var r = 0; r < 8; r++) {
 
         for (var c = 0; c < 4; c++) {
-            new BoardTile(color1, "1", frame);
-            new BoardTile(color2, "2", frame);
+            new BoardTile(color1, whiteSymbol[4], frame);
+            new BoardTile(color2, blackSymbol[4], frame);
         }
         frame.innerHTML += "<br/>";
 
