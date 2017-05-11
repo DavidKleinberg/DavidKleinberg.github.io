@@ -105,21 +105,20 @@ var Position = {
 };
 
 class BoardTile {
-  constructor(color, symbol, frame) {
+  constructor(color, symbol, inline) {
     var box = document.createElement("div");
     box.className = "box";
     box.style.backgroundColor = color;
     box.style.width = '4rem';
-    //box.style.borderRadius = '10%';
-    box.style.borderStyle = 'solid';
-    box.style.borderColor = '#f4b942';
-    box.style.borderWidth = '.03rem';
+    box.style.borderRadius = '10%';
     box.innerHTML = symbol;
     box.style.textAlign = 'center';
     box.style.paddingTop = '1.5rem';
     box.style.paddingBottom = '1.5rem';
-    box.style.display = 'inline-block';
-    frame.appendChild(box);
+    if (inline) {
+      box.style.display = 'inline';
+    }
+    output.appendChild(box);
   }
 };
 
@@ -181,6 +180,27 @@ function index(position) {
     return position.y * 8 + position.x;
 }
 
+function padTiles(x, y) {
+    
+    var line = "";
+    /*for (var n = 0; n < 15; n++) {
+        line += "&nbsp";
+    }*/
+    for (var n = 0; n < 5; n++) {
+      if (n == 2) {
+        line += "&nbsp&nbsp";
+      } else {
+        line += "&emsp;";
+      }
+    }
+
+    for (var c = 0; c < 4; c++) {   
+            output.innerHTML += "<span style='background-color:" + x + "'>" + line+ "</span>";
+            output.innerHTML += "<span style='background-color:" + y + "'>" + line+ "</span>";
+        }
+        output.innerHTML += "<br/>";
+}
+
 
 function playChess() {
     if (clicked) {
@@ -190,29 +210,40 @@ function playChess() {
     var pieceSymbol = ["P", "k", "R", "B", "Q", "X"];
 
     setupBoard();
-    var frame = document.createElement("div");
-    frame.className = "frame";
-    frame.style.borderStyle = 'solid';
-    frame.style.borderColor = '#f4b942';
-    frame.style.borderWidth = '.2rem';
-    frame.style.display = 'inline-block';
-    output.appendChild(frame);
 
     var p = new Piece();
     if (p.name == undefined) {
     }
 
+    var buffer = "";
+    for (var n = 0; n < 5; n++) {
+        if (n == 2) {
+            buffer += pieceSymbol[1];
+            //buffer += boardPieces[n];
+        //} else if (n != 8 && n !=6) {
+        } else {
+            //buffer += "&nbsp";
+            buffer += "&emsp;";
+        }
+    }
     var color1 = "#F0F8FF";
     var color2 = "#ADD8E6";
-    var inline = true;
 
     for (var r = 0; r < 8; r++) {
 
-        for (var c = 0; c < 4; c++) {
-            new BoardTile(color1, "1", frame);
-            new BoardTile(color2, "2", frame);
+        //padTiles(color1, color2);
+
+        for (var c = 0; c < 4; c++) {   
+            //output.innerHTML += "<span style='background-color:" + color1 + "'>" + buffer+ "</span>";
+            //output.innerHTML += "<span style='background-color:" + color1 + "'>&#09;</span>";
+            //output.innerHTML += "<span style='background-color:" + color2 + "'>" + buffer+ "</span>";
+            //output.innerHTML += "<span style='background-color:" + color2 + "'>&#09;</span>";
+            new BoardTile(color1, "1", true);
+            new BoardTile(color2, "2", true);
         }
-        frame.innerHTML += "<br/>";
+        output.innerHTML += "<br/>";
+
+        //padTiles(color1, color2);
 
         var temp = color1;
         color1 = color2;
