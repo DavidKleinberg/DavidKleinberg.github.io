@@ -150,12 +150,15 @@ body {
   background-repeat: no-repeat;
   border-radius: 2rem; }
 
-.page .chess-game {
+.page .bitbucket {
   background: url("https://bitbucket-marketing-cdn.atlassian.com/dam/jcr:1437c132-1dbc-410d-b6a6-cb7fce8f2775/bitbucket_rgb_darkblue_atlassian_1200x630.png");
-  padding: 5rem;
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  justify-content: center;
   background-size: contain;
-  background-repeat: no-repeat;
-  border-radius: 2rem; }
+  background-repeat: no-repeat; }
 
 .page .say2eat {
   background: url("https://cloud.githubusercontent.com/assets/21249755/25604292/6741ecfa-2ed0-11e7-99ef-1abdc2110ab2.png");
