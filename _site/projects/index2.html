@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>projects</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://webdev.acm.jhu.edu/assets/fonts/gobold-bold/stylesheet.css'>
+<link rel='stylesheet prefetch' href='https://webdev.acm.jhu.edu/assets/fonts/gobold-light/stylesheet.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="/assets/main.css">
+      <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+
+</head>
+
+<body>
+  <div class = "header">
+  <a href="/" class="header-logo">DK</a>
+  <ul class="header-nav">
+    <li><a href="/aboutme/" class="pill-btn">About</a></li>
+    <li><a href="/projects/" class="pill-btn">Projects</a></li>
+    <li><a href="/internships/" class="pill-btn">Internships</a></li>
+  </ul>
+</div>
+
+<div class = "page" id = "page">
+
+  <div class = "title">
+	 <p>PROJECTS<br /><br /></p>
+  </div>
+
+    <div class="robotics">
+      <!--<div class="video-foreground">-->
+        <iframe id = scoringElement src = "https://www.youtube.com/embed/S3s08qe8AJY?autoplay=1&controls=0&&loop=1&showinfo=0&playlist=S3s08qe8AJY" frameborder = "0" style="width:28.5rem; height:16rem;"></iframe>
+    </div>
+
+    <!--<script>
+      function silence() {
+        var myVideo =  document.getElementById('scoringElement').innerHTML; 
+        myVideo.mute();
+      }
+    </script>-->
+
+  <div class = "description">
+    <p>Checkout my projects on Github!</p>
+  </div>
+
+<!--<pre><code class="javascript"><code class="keyword">function</code> <code class="name">foo</code>()-->
+
+  <a href = "https://github.com/DavidKleinberg/" class = "gitcat"> </a>
+
+  <div class = "description">
+    <p>Checkout my final project in C++ <br />(Currently being translated to JavaScript Below)</p>
+  </div>
+
+  <a href = "https://bitbucket.org/DavidKleinberg/cs120-final-project" class = "bitbucket"> </a>
+
+</div>
+
+  <div class = "coding">
+    <button id = "chess-btn" onclick = "playChess()"> PLAY CHESS </button>
+    <!--<button type = "button" id = "chessbtn">PLAY CHESS</button>-->
+    <!--<button id = "chessbtn" onclick="playChess()">PLAY CHESS</button>-->
+    <!--<input type="button" onclick="playChess();" value="Click Me!"/>-->
+  </div>
+
+  <div class = "chess-game">
+    <p id = "chess-output" class = "chess-output"></p>
+  </div>
+
+  <div class = "chess-input">
+    <input type = "text" id = "chess-input" name = "chess-input" placeholder = "Please enter your move" onkeydown = "checkInput()">
+  </div>
+
+
+<div class = "footer">
+  <p>&copy; 2017 David Kleinberg</p>
+</div>
+
+<script type="text/javascript">
+
+var output = document.getElementById("chess-output");
+var clicked = false;
+
+PieceEnum = {
+    PAWN : 0,
+    ROOK : 1,
+    KNIGHT : 2,
+    BISHOP : 3,
+    QUEEN : 4,
+    KING : 5
+}
+
+Player = {
+    WHITE : 0,
+    BLACK : 1
+};
+
+Status = {
+    LOAD_FAILURE : -10,
+    SAVE_FAILURE : -9,
+    PARSE_ERROR : -8,
+    MOVE_ERROR_OUT_OF_BOUNDS : -7,
+    MOVE_ERROR_NO_PIECE : -6,
+    MOVE_ERROR_BLOCKED : -5,
+    MOVE_ERROR_CANT_CASTLE : -4,
+    MOVE_ERROR_MUST_HANDLE_CHECK : -3,
+    MOVE_ERROR_CANT_EXPOSE_CHECK : -2,
+    MOVE_ERROR_ILLEGAL : -1,
+    SUCCESS : 1,
+    MOVE_CHECK : 2,
+    MOVE_CAPTURE : 3,
+    MOVE_CHECKMATE : 4,
+    MOVE_STALEMATE : 5,
+    GAME_WIN : 6,
+    GAME_OVER : 7
+};
+
+class Position {
+    constructor(x, y) {
+      this._x = x;
+      this._y = y;
+    }
+    get x() {
+      return this._x;
+    }
+    get y() {
+      return this._y;
+    }
+
+};
+
+class BoardTile {
+  constructor(color, symbol, frame) {
+    this.box = document.createElement("div");
+    this.box.className = "box";
+    this.box.style.backgroundColor = color;
+    this.box.style.width = '4rem';
+    this.box.style.height = '4rem';
+    this.box.style.borderStyle = 'solid';
+    this.box.style.borderColor = '#f4b942';
+    this.box.style.borderWidth = '.03rem';
+    this.box.style.lineHeight = '4rem';
+
+    if (symbol != undefined) {
+      this.box.innerHTML = symbol;
+      this.box.style.textAlign = 'center';
+    }
+
+    this.box.style.display = 'inline-block';
+    frame.appendChild(this.box);
+    boardTiles.push(this.box);
+  }
+
+  changeSymbol(sym) {
+    this.box.innerHTML = sym;
+  }
+};
+
+class Piece {
+  // Constructs a piece with a specified owner
+    // Note that this is deliberately made protected. Use the factory only!
+    constructor(id, owner) { 
+      this._owner = owner;
+      this._id = id;
+    }
+
+  // Returns the owner of the piece
+    get owner() {
+      return this._owner;
+    }
+
+    // Returns the id of the piece
+    get id() {
+      return this._id;
+    }
+
+    // Returns an integer representing move validity
+    // >= 0 = valid, < 0 = invalid
+    validMove(start, end, board) {}
+
+};
+
+var boardPieces = new Array(64);
+var boardTiles = new Array();
+var turn = 0;
+
+function setupBoard() {
+
+    var pieces = [PieceEnum.ROOK, PieceEnum.KNIGHT, PieceEnum.BISHOP, PieceEnum.QUEEN,
+                  PieceEnum.KING, PieceEnum.BISHOP, PieceEnum.KNIGHT, PieceEnum.ROOK];
+
+    for (var i = 0; i < pieces.length; i++) {
+        initPiece(PieceEnum.PAWN, Player.WHITE, new Position(i, 1));
+        initPiece(pieces[i], Player.WHITE, new Position(i, 0));
+        initPiece(pieces[i], Player.BLACK, new Position(i, 7));
+        initPiece(PieceEnum.PAWN, Player.BLACK, new Position(i, 6));
+    }
+
+    //Set the positions for the kings. This allows us to find them easily later in order to check for checkmate/stalemate.
+
+}
+
+// Get the 1d index from the 2d position
+function index(position) {
+    return position.y * 8 + position.x;
+}
+
+function initPiece(id, owner, position) {
+  //output.innerHTML += "position: " + index(position);
+    var piece = new Piece(id, owner);
+    //if (piece == undefined) {
+      //window.alert("bad");
+      //return false;
+    //} 
+
+    /*// Fail if the position is out of bounds
+    if (!validPosition(position)) {
+        Prompts::outOfBounds();
+        return false;
+    }
+    // Fail if the position is occupied
+    if (getPiece(position)) {
+        Prompts::blocked();
+        return false;
+    }*/
+    boardPieces[index(position)] = piece;
+    //output.innerHTML += " id: " + boardPieces[index(position)].id + "<br />";
+}
+
+function checkInput() {
+  var input = document.getElementById("chess-input");
+  if(event.keyCode == 13) {
+      //window.alert("entered");
+      //directUserInput();
+      directUserInput(input.value);
+      input.value = "";
+  }
+}
+
+function directUserInput(input) {
+
+    var command = {};
+
+    command["q"] = 'q';
+    command["board"] = 'b';
+    command["save"] = 's';
+    command["forfeit"] ='f';
+    command["castle"] = 'c';
+
+    var selection;
+
+    if (input in command) {
+        selection = command[input];
+    } else {
+        selection = 'd';
+    }
+    switch (selection) {
+    case 'q':
+        break;
+
+    case 'b':
+        /*changeBoardStatus();
+        if (getBoardStatus()) {
+            displayBoard();
+        }*/
+        break;
+
+    case 's':
+    {
+        /*string filename;
+        Prompts::saveGame();
+        cin >> filename;
+
+        //std::ofstream outputFile(filename, std::ofstream::out);
+        std::ofstream outputFile;
+        outputFile.open(filename);
+
+        if (!outputFile.is_open()) {
+            Prompts::saveFailure();
+            return;
+        }
+
+        outputFile << "chess\n" << this->m_turn - 1 << endl;
+
+        for (int y = 0; y < 8; y++) {
+            for (int x = 0; x < 8; x++) {
+                Piece* p = this->getPiece(Position(x,y));
+                if (p) {
+                    outputFile << p->owner() << " " << char(x+97) << y+1 << " " << p->id() << endl;
+                }
+            }
+        }
+
+        outputFile.close();
+        input = "q";*/
+    }
+    break;
+
+    case 'f':
+
+        //Prompts::win((Player)!playerTurn(), turn());
+        //Prompts::gameOver();
+        input = "q";
+
+        break;
+
+    case 'c':
+
+        break;
+
+    case 'd':
+    {
+
+
+      if (input.length == 5) {
+        var fromCol = input.charAt(0);
+        var toCol = input.charAt(3);
+        var fromRow = input.charAt(1);
+        var toRow = input.charAt(4);
+
+        var stat = makeMove(new Position(fromCol.charCodeAt(0)-97, fromRow-1), new Position(toCol.charCodeAt(0)-97, toRow-1));
+
+        } else {
+            //Prompts::parseError();
+            output.innerHTML += "Could not parse";
+        }
+    }
+    break;
+  }
+}
+
+function validPosition(p) {
+    return p.x < 8 && p.y < 8;
+}
+
+function playerTurn() {
+  return turn % 2;
+}
+
+function makeMove(start, end) {
+  if (!validPosition(start) || !validPosition(end)) {
+    output.innerHTML += "out of bounds";
+    return MOVE_ERROR_OUT_OF_BOUNDS;
+  }
+
+  var piece = boardPieces[index(start)];
+
+  //Check that there the player whose turn it is has a piece at the desired start position.
+  if (!piece || piece.owner != playerTurn()) {
+    output.innerHTML += "no piece";
+    return MOVE_ERROR_NO_PIECE;
+  }
+
+  //Check that the player is not trying to move the piece to the same spot it already occupies.
+  if (index(start) == index(end)) {
+    output.innerHTML += "illegal move";
+    return MOVE_ERROR_ILLEGAL;
+  }
+/*
+  int moveStatus = testMove(start, end, playerTurn(), false);
+  
+  if (moveStatus == MOVE_ERROR_ILLEGAL) {
+    output.innerHTML += "illegal move";
+        return;// MOVE_ERROR_ILLEGAL;
+  }
+  if (moveStatus == MOVE_ERROR_BLOCKED) {
+    output.innerHTML += "blocked by another piece"; 
+    return MOVE_ERROR_BLOCKED;
+  }
+
+  if (moveStatus == MOVE_ERROR_CANT_EXPOSE_CHECK) {
+    Prompts::cantExposeCheck();
+    return MOVE_ERROR_CANT_EXPOSE_CHECK;
+  }
+
+  if (moveStatus == MOVE_ERROR_MUST_HANDLE_CHECK){
+    Prompts::mustHandleCheck();
+    return MOVE_ERROR_MUST_HANDLE_CHECK;
+  }
+
+  //If the player puts the other player in check, check to see if it is checkmate.
+  //If the other player is not in check, check to see if they're in stalemate.
+  if (moveStatus == MOVE_CHECK){
+    if (checkCheckmate(false)){
+      Prompts::checkMate(playerTurn());
+      Prompts::win(playerTurn(), turn());
+      return MOVE_CHECKMATE;
+    }
+    Prompts::check(Player(playerTurn()));
+  }
+  else {
+    if (checkStalemate()){
+      Prompts::staleMate();
+      return MOVE_STALEMATE;
+    }
+  }
+
+  //if (getPiece(end)) {
+    
+  //}
+*/
+    //delete endPiece;
+
+  movePiece(start, end, piece);
+
+  turn += 1;
+  return SUCCESS;
+  
+}
+
+function movePiece(start, end, piece) {
+  boardPieces[index(start)] = null;
+  boardPieces[index(end)] = piece;
+
+  boardTiles[index(end)].symbol(piece.id());
+
+}
+
+
+function playChess() {
+    if (clicked) {
+        return 1;
+    }
+    clicked = true;
+    var whiteSymbol = ["\u2659", "\u2656", "\u2658", "\u2657", "\u2655", "\u2654"];
+    var blackSymbol = ["\u265F", "\u265C", "\u265E", "\u265D", "\u265B", "\u265A"];
+
+    setupBoard();
+
+    var frame = document.createElement("div");
+    frame.className = "frame";
+    frame.style.borderStyle = 'solid';
+    frame.style.borderColor = '#f4b942';
+    frame.style.borderWidth = '1.5rem';
+    frame.style.borderRadius = "2%";
+    frame.style.display = 'inline-block';
+    frame.style.lineHeight = '0rem';
+    output.appendChild(frame);
+
+    var color1 = "#F0F8FF";
+    var color2 = "#ADD8E6";
+    var inline = true;
+
+
+
+    for (var r = 56; r >= 0; r -= 8) {
+
+        for (var c = 0; c < 8; c++) {
+
+          var piece = boardPieces[r+c];
+          
+          if (piece != undefined) {
+
+            if (piece.owner == Player.WHITE) {
+              new BoardTile(color1, whiteSymbol[piece.id], frame);
+
+            } else {
+              new BoardTile(color1, blackSymbol[piece.id], frame);
+            }
+          } else {
+            new BoardTile(color1, undefined, frame);
+          }
+          var temp = color1;
+          color1 = color2;
+          color2 = temp;
+        }
+          var temp = color1;
+          color1 = color2;
+          color2 = temp;
+        frame.innerHTML += "<br/>"; 
+    }
+
+    //boardTiles[1].symbol = "H";
+    for (var i = 0; i < 30; i++) {
+      //boardTiles[i].innerHTML = "H";
+      boardTiles[i].changeSymbol("H");
+
+    }
+    output.innerHTML += boardTiles.length;
+}
+</script>
+  
+<!--<script type="text/javascript" src = "./projects.js/"></script>-->
+<!--<script type="text/javascript" src = "../js/main.js/"></script>-->
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs /jquery/1.7.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<!--<script type="text/javascript" src = "./script.js/"></script>-->
+
+</body>
+</html>
