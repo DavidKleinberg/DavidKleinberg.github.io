@@ -60,33 +60,6 @@ function shootBall() {
     }
 }
 
-function displayMessage() {
-    for (var i = 1; i < 52; i++) {
-        var screen = document.createElement("img");
-        screen.setAttribute("src", "./Message/Message"+i+".png");
-        screen.setAttribute("height", "185.75px");
-        screen.setAttribute("id", "message"+i);
-        screen.setAttribute("alt", "Message");
-
-        // screen.style.position = "absolute";
-        // screen.style.left = "0";
-        // screen.style.right = "0";
-        // screen.style.margin = "auto";
-
-        screen.style.position = "absolute";
-        screen.style.left = "50%";
-        screen.style.marginLeft = "-151px";
-        screen.style.top = "50%";
-        screen.style.marginTop = "16px";
-        screen.style.visibility = "hidden";
-        screen.style.zIndex = "-1";
-
-        document.getElementById("moving_content").appendChild(screen);
-
-        playMessage();
-    }
-}
-
 function playMessage() {
     console.log("message"); 
     var elem = null;
@@ -112,6 +85,33 @@ function playMessage() {
                 inc++; 
             }
         }
+    }
+}
+
+function displayMessage() {
+    for (var i = 1; i < 52; i++) {
+        var screen = document.createElement("img");
+        screen.setAttribute("src", "./Message/Message"+i+".png");
+        screen.setAttribute("height", "185.75px");
+        screen.setAttribute("id", "message"+i);
+        screen.setAttribute("alt", "Message");
+
+        // screen.style.position = "absolute";
+        // screen.style.left = "0";
+        // screen.style.right = "0";
+        // screen.style.margin = "auto";
+
+        screen.style.position = "absolute";
+        screen.style.left = "50%";
+        screen.style.marginLeft = "-151px";
+        screen.style.top = "50%";
+        screen.style.marginTop = "16px";
+        screen.style.visibility = "hidden";
+        screen.style.zIndex = "-1";
+
+        document.getElementById("moving_content").appendChild(screen);
+
+        playMessage();
     }
 }
 
