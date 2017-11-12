@@ -1,12 +1,35 @@
-.body {
-	
+
+#body {
+
+/*background-image: url("./backdrop.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;*/
+  background-color: #8BADE6;
 }
 
 .header {
-position: -webkit-sticky; /* Safari */
-position: sticky;
-  padding: 2rem 1.5rem;
-  margin-bottom: 2rem; }
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+  	padding: 2rem 1.5rem;
+  	margin-bottom: 2rem;
+}
+
+.mainpage_logo {
+/*	background-image: url("./favicon.png");
+*/	border-radius: 100%;
+	border-width: 2px;
+	border-color: white;
+	border-style: solid;
+	/*width: 60px;
+	height: 60px;*/
+	display: block;
+/*	border-right-width: 10px;*/
+	padding-right: 7px;
+	padding-left: 7px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	float: left;
+}
 
 .header-logo {
   background: #f7b7f4;
@@ -22,18 +45,52 @@ position: sticky;
   text-align: right;
   height: 100%;
   vertical-align: middle;
-  line-height: 55px; }
+  line-height: 55px;
+}
 
 .header-nav li {
-  display: inline; }
+  display: inline;
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+  padding: 4px;
+  border-radius: 5px;
+}
 
-.center_content {
-	margin: auto;
-	padding-top: 2rem;
+.header-nav a {
+	text-decoration: none;
+	font-family: "arial";
+	font-weight: bold;
+	color: gray;
+}
+
+.introduction {
+	text-align: center;
 	padding-bottom: 2rem;
+	text-decoration: white;
+}
+
+.introduction p {
+	color: white;
+	font-family: "arial";
+}
+
+.focus {
+	padding: 5rem;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	width: 50%;
+	margin-left: 25%;
+}
+.center_content {
+	height: 100%;
+	margin-bottom: 15rem;
 }
 
 .moving_content {
+
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -57,7 +114,8 @@ position: sticky;
 	position: absolute;
 	left: 0;
 	right: 0;
-	margin: auto
+	margin: auto;
+	z-index: 3;
 }
 
 #computer_backdrop {
@@ -65,7 +123,7 @@ position: sticky;
   	-moz-transition: z-index 1s ease-in-out;
   	-o-transition: z-index 1s ease-in-out;
   	transition: z-index 1s ease-in-out;
-	z-index: -1
+  	z-index: 1;
 }
 
 #computer_video {
@@ -84,7 +142,7 @@ position: sticky;
 	margin-right: -335px;
 	top: 50%;
 	margin-top: -50px;
-	z-index: -1;
+	z-index: 1;
 }
 
 #robotics1, #robotics2, #robotics3, #robotics4 {
@@ -94,7 +152,7 @@ position: sticky;
 	margin-right: -335px;
 	top: 50%;
 	margin-top: -50px;
-	z-index: -1;
+	z-index: 1;
 }
 
 #computer:hover {
@@ -104,10 +162,10 @@ position: sticky;
 #go_kart_enter {
     position: absolute; /*relative*/
     left: 50%;
-	margin-left: -500px;
+	margin-left: -800px;
 	top: 50%;
 	margin-top: 25px;
-	z-index: -2;
+	z-index: -1;
 }
 
 #go_kart_exit {
@@ -116,5 +174,5 @@ position: sticky;
 	margin-right: -75px;
 	top: 50%;
 	margin-top: 110px;
-	z-index: -2;
+	z-index: 0;
 }

@@ -17,11 +17,11 @@ function kart_exit() {
 
 function kart_enter() {
     var elem = document.getElementById("go_kart_enter"); 
-    var pos = -500;
+    var pos = -800;
     var id = setInterval(frame, 5);
     function frame() {
         if (pos == 0) {
-            pos = -750
+            pos = -800
             elem.style.marginLeft = pos + 'px';
             clearInterval(id);
             kart_exit();
@@ -60,31 +60,52 @@ function shootBall() {
     }
 }
 
+// function playMessage() {
+//     console.log("message"); 
+//     var elem = null;
+//     var inc = 11;
+//     var index = 1;
+//     var id = setInterval(frame, .5);
+//     function frame() {
+//         if (index != 52) {
+//             if (inc == 11) {
+//                 if (index == 51) {
+//                     index = 1;
+//                 } else {
+//                     index++;
+//                 }
+//                 elem = document.getElementById("message"+index);
+//                 elem.style.visibility = 'visible'; //visible
+//                 inc = 0;
+//                 //clearInterval(id);
+//             } else if (inc == 10) {
+//                 elem.style.visibility = 'hidden'; //hidden
+//                 inc++;
+//             } else {
+//                 inc++; 
+//             }
+//         }
+//     }
+// }
+
 function playMessage() {
-    console.log("message"); 
-    var elem = null;
-    var inc = 11;
+    var screen = document.getElementById("message1");
+    var inc = 0;
     var index = 1;
-    var id = setInterval(frame, .5);
+    var id = setInterval(frame, 60);
     function frame() {
-        if (index != 52) {
-            if (inc == 11) {
-                if (index == 51) {
-                    index = 1;
-                } else {
-                    index++;
-                }
-                elem = document.getElementById("message"+index);
-                elem.style.visibility = 'visible'; //visible
-                inc = 0;
-                //clearInterval(id);
-            } else if (inc == 10) {
-                elem.style.visibility = 'hidden'; //hidden
-                inc++;
+        if (inc = 30) {
+            screen.style.visibility = 'hidden';
+            if (index == 51) {
+                index = 1;
             } else {
-                inc++; 
+                index++;
             }
+            screen = document.getElementById("message"+index);
+            screen.style.visibility = 'visible'; //visible
+            inc = 0;
         }
+        inc++;
     }
 }
 
@@ -107,7 +128,7 @@ function displayMessage() {
         screen.style.top = "50%";
         screen.style.marginTop = "16px";
         screen.style.visibility = "hidden";
-        screen.style.zIndex = "-1";
+        screen.style.zIndex = "2";
 
         document.getElementById("moving_content").appendChild(screen);
 

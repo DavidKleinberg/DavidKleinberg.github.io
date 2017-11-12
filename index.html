@@ -6,30 +6,38 @@
       <link rel="stylesheet" href="./main.css">
 </head>
 
-<body>
+<body id = "body">
   <div class = "header">
-    <a href="/" class="header-logo">DK</a>
+    <!-- <a href="/" class="header-logo">DK</a> -->
+    <img class = "mainpage_logo" src = "./favicon.png" height = "50px">
     <ul class="header-nav">
-      <li><a href="/aboutme/" class="pill-btn">About</a></li>
-      <li><a href="/projects/" class="pill-btn">Projects</a></li>
-      <li><a href="/internships/" class="pill-btn">Internships</a></li>
+      <li><a href="./about.html" class="pill-btn">About</a></li>
+      <li><a href="./projects.html" class="pill-btn">Projects</a></li>
+      <li><a href="./internships.html" class="pill-btn">Internships</a></li>
     </ul>
   </div>
 
-  <div class = "center_content">
-    <div class = "moving_content" id = "moving_content">
+  <div class = "introduction">
+    <p>This site is currently being developed. In the meantime, hover the computer to check out my projects on Github. Or head over here: </p>
+    <a href="http://dkleinberg.wixsite.com/mysite">OldSite</a>
+  </div>
 
-        <input id = "computer" type = "image" src = "./Computer.png" onclick = "github()" style = "height:250px;"/>
-        <img id = "computer_backdrop" src = "./ComputerBack.png" alt="Computer" style = "height:250px;" onload="displayMessage()">
+  <div class = "focus">
+    <div class = "center_content">
+      <div class = "moving_content" id = "moving_content">
 
-        <img id = "robotics0" src = "./RoboticsBase.png" alt="Robotics" style = "width:175px;" onload="shootBall()">
-        <img id = "robotics1" src = "./Robotics1.png" alt="Robotics" style = "width:175px;">
-        <img id = "robotics2" src = "./Robotics2.png" alt="Robotics" style = "width:175px;">
-        <img id = "robotics3" src = "./Robotics3.png" alt="Robotics" style = "width:175px;">
-        <img id = "robotics4" src = "./Robotics4.png" alt="Robotics" style = "width:175px;">
-      
-        <img id = "go_kart_enter" src = "./MovingKart.png" alt="Go Kart" style = "width:100px;" onload="kart_enter()">
-        <img id = "go_kart_exit" src = "./MovingKartFlipped.png" alt="Go Kart" style = "width:150px;">
+          <input id = "computer" type = "image" src = "./Computer.png" onclick = "github()" style = "height:250px;"/>
+          <img id = "computer_backdrop" src = "./ComputerBack.png" alt="Computer" style = "height:250px;" onload="displayMessage()">
+
+          <img id = "robotics0" src = "./RoboticsBase.png" alt="Robotics" style = "width:175px;" onload="shootBall()">
+          <img id = "robotics1" src = "./Robotics1.png" alt="Robotics" style = "width:175px;">
+          <img id = "robotics2" src = "./Robotics2.png" alt="Robotics" style = "width:175px;">
+          <img id = "robotics3" src = "./Robotics3.png" alt="Robotics" style = "width:175px;">
+          <img id = "robotics4" src = "./Robotics4.png" alt="Robotics" style = "width:175px;">
+        
+          <img id = "go_kart_enter" src = "./MovingKart.png" alt="Go Kart" style = "width:100px;" onload="kart_enter()">
+          <img id = "go_kart_exit" src = "./MovingKartFlipped.png" alt="Go Kart" style = "width:150px;">
+      </div>
     </div>
   </div>
 
