@@ -61,6 +61,10 @@ position: sticky;
 }
 
 #computer_backdrop {
+	-webkit-transition: z-index 1s ease-in-out;
+  	-moz-transition: z-index 1s ease-in-out;
+  	-o-transition: z-index 1s ease-in-out;
+  	transition: z-index 1s ease-in-out;
 	z-index: -1
 }
 
@@ -95,10 +99,6 @@ position: sticky;
 
 #computer:hover {
 	opacity:0;
-}
-
-#robotics:hover {
-	background-color: black;
 }
 
 #go_kart_enter {

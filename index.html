@@ -17,8 +17,9 @@
   </div>
 
   <div class = "center_content">
-    <div class = "moving_content">
-        <img id = "computer" src = "./Computer.png" alt="Computer" style = "height:250px;">
+    <div class = "moving_content" id = "moving_content">
+
+        <input id = "computer" type = "image" src = "./Computer.png" onclick = "github()" onload="displayMessage()" style = "height:250px;"/>
         <img id = "computer_backdrop" src = "./ComputerBack.png" alt="Computer" style = "height:250px;">
 
         <img id = "robotics0" src = "./RoboticsBase.png" alt="Robotics" style = "width:175px;" onload="shootBall()">
@@ -29,14 +30,6 @@
       
         <img id = "go_kart_enter" src = "./MovingKart.png" alt="Go Kart" style = "width:100px;" onload="kart_enter()">
         <img id = "go_kart_exit" src = "./MovingKartFlipped.png" alt="Go Kart" style = "width:150px;">
-
-        <!--<embed src="./ComputerMessage.mov" width="600" height="400" scale="aspect" controller="true">-->
-        
-        <video id = "computer_video" class = "computer_video" height="185.75px" autoplay loop muted>
-          <source src="./ComputerMessage.mov" type="video/mp4">
-          <!--<source src="movie.ogg" type="video/ogg">-->
-          Your browser does not support the video tag.
-        </video>
     </div>
   </div>
 
