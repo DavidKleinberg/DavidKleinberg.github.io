@@ -1,19 +1,53 @@
----
-layout: home
----
-{% for post in site.posts %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>David Kleinberg's Webpage</title>
+      <link rel="stylesheet" href="./main.css">
+</head>
 
-<div class = "content-group">
-    <div class = "content-header">
-      <h3 class="content-heading">{{post.title}}</h3>
-      <h4 class="content-subheading">{{ post.date | date: "%b %-d, %Y" }}</h4>
-    </div>
-    <div class = "content-body">
-      {{post.excerpt}}
-      <div class = "content-actions">
-     <a href="{{post.url}}" class = "pill-btn">ReadMore</a>
-      </div>
-        
-    </div> 
+<body>
+  <div class = "header">
+    <a href="/" class="header-logo">DK</a>
+    <ul class="header-nav">
+      <li><a href="/aboutme/" class="pill-btn">About</a></li>
+      <li><a href="/projects/" class="pill-btn">Projects</a></li>
+      <li><a href="/internships/" class="pill-btn">Internships</a></li>
+    </ul>
   </div>
- {%endfor%}
+
+  <div class = "center_content">
+    <div class = "moving_content">
+        <img id = "computer" src = "./Computer.png" alt="Computer" style = "height:250px;">
+        <img id = "computer_backdrop" src = "./ComputerBack.png" alt="Computer" style = "height:250px;">
+
+        <img id = "robotics0" src = "./RoboticsBase.png" alt="Robotics" style = "width:175px;" onload="shootBall()">
+        <img id = "robotics1" src = "./Robotics1.png" alt="Robotics" style = "width:175px;">
+        <img id = "robotics2" src = "./Robotics2.png" alt="Robotics" style = "width:175px;">
+        <img id = "robotics3" src = "./Robotics3.png" alt="Robotics" style = "width:175px;">
+        <img id = "robotics4" src = "./Robotics4.png" alt="Robotics" style = "width:175px;">
+      
+        <img id = "go_kart_enter" src = "./MovingKart.png" alt="Go Kart" style = "width:100px;" onload="kart_enter()">
+        <img id = "go_kart_exit" src = "./MovingKartFlipped.png" alt="Go Kart" style = "width:150px;">
+
+        <!--<embed src="./ComputerMessage.mov" width="600" height="400" scale="aspect" controller="true">-->
+        
+        <video id = "computer_video" class = "computer_video" height="185.75px" autoplay loop muted>
+          <source src="./ComputerMessage.mov" type="video/mp4">
+          <!--<source src="movie.ogg" type="video/ogg">-->
+          Your browser does not support the video tag.
+        </video>
+    </div>
+  </div>
+
+  <div class = "footer">
+    <p>&copy; 2017 David Kleinberg</p>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
+
+<!--<div class = "center_computer">
+    <div class = "robotics">
+    <div class = "go_kart" onmouseenter="moveKart()">-->
