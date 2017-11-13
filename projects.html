@@ -2,29 +2,19 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>projects</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-  <link rel='stylesheet prefetch' href='https://webdev.acm.jhu.edu/assets/fonts/gobold-bold/stylesheet.css'>
-<link rel='stylesheet prefetch' href='https://webdev.acm.jhu.edu/assets/fonts/gobold-light/stylesheet.css'>
-<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
-<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-
-      <link rel="stylesheet" href="/assets/main.css">
-      <!--<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />-->
-
+  <title>Projects</title>
+  <link rel="stylesheet" href="./main.css">
 </head>
 
-<body>
+<body id = "body">
   <div class = "header">
-  <a href="/" class="header-logo">DK</a>
-  <ul class="header-nav">
-    <li><a href="/aboutme/" class="pill-btn">About</a></li>
-    <li><a href="/projects/" class="pill-btn">Projects</a></li>
-    <li><a href="/internships/" class="pill-btn">Internships</a></li>
-  </ul>
-</div>
+    <a href="./index.html" class="header-logo">DK</a>
+    <ul class="header-nav">
+      <li><a href="./about.html" class="pill-btn">About</a></li>
+      <li><a href="./projects.html" class="pill-btn">Projects</a></li>
+      <li><a href="./intern.html" class="pill-btn">Internships</a></li>
+    </ul>
+  </div>
 
 <div class = "page" id = "page">
 
@@ -37,12 +27,10 @@
         <iframe id = scoringElement src = "https://www.youtube.com/embed/S3s08qe8AJY?autoplay=1&controls=0&&loop=1&showinfo=0&playlist=S3s08qe8AJY" frameborder = "0" style="width:28.5rem; height:16rem;"></iframe>
     </div>
 
-    <!--<script>
-      function silence() {
-        var myVideo =  document.getElementById('scoringElement').innerHTML; 
-        myVideo.mute();
-      }
-    </script>-->
+    <!-- <video id = "robotics" class = "robotics" style = "height:16rem; width:28.5rem" autoplay loop muted>
+    <source src="https://www.youtube.com/embed/S3s08qe8AJY?autoplay=1&controls=0&&loop=1&showinfo=0&playlist=S3s08qe8AJY" type="video/mp4">
+    Your browser does not support the video tag.
+  </video> -->
 
   <div class = "description">
     <p>Checkout my projects on Github!</p>
@@ -575,7 +563,7 @@ function playChess() {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 
-<script type="text/javascript" src = "./script.js/"></script>
+<script type="text/javascript" src = "./main.js"></script>
 
 </body>
 </html>

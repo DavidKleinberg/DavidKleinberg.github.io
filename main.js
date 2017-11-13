@@ -1,12 +1,15 @@
+var exited = 0;
+
 function kart_exit() {
     var elem = document.getElementById("go_kart_exit"); 
     var pos = 0;
     var id = setInterval(frame, 5);
     function frame() {
-        if (pos == 750) {
+        if (pos == window.innerWidth/2) {
             pos = 0
             elem.style.marginRight = pos + 'px';
             clearInterval(id);
+            exited = 1;
             kart_enter();
         } else {
             pos++; 
@@ -16,15 +19,22 @@ function kart_exit() {
 }
 
 function kart_enter() {
-    var elem = document.getElementById("go_kart_enter"); 
-    var pos = -800;
+    var elem = document.getElementById("go_kart_enter");
+    console.log(window.innerWidth);
+    //var width = screen.width;  -800
+    var pos = 0-window.innerWidth/2;
     var id = setInterval(frame, 5);
     function frame() {
         if (pos == 0) {
-            pos = -800
-            elem.style.marginLeft = pos + 'px';
+            exited = 0;
             clearInterval(id);
             kart_exit();
+            if (exited == 1) {
+                pos = 0-window.innerWidth/2;
+                //pos = -800;
+                elem.style.marginLeft = pos + 'px';
+            }
+            
         } else {
             pos++; 
             elem.style.marginLeft = pos + 'px'; 
