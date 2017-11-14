@@ -3,42 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>David Kleinberg's Webpage</title>
-      <link rel="stylesheet" href="./main.css">
+      <link rel="stylesheet" href="./source/main.css">
 </head>
 
 <body id = "body">
   <div class = "header">
     <!-- <a href="/" class="header-logo">DK</a> -->
-    <img class = "mainpage_logo" src = "./favicon.png" height = "50px">
+    <img class = "mainpage_logo" src = "./content/favicon.png" height = "50px">
     <ul class="header-nav">
-      <li><a href="./about.html" class="pill-btn">About</a></li>
-      <li><a href="./projects.html" class="pill-btn">Projects</a></li>
-      <li><a href="./intern.html" class="pill-btn">Internships</a></li>
+      <li><a href="./source/about.html" class="pill-btn">About</a></li>
+      <li><a href="./source/projects.html" class="pill-btn">Projects</a></li>
+      <li><a href="./source/intern.html" class="pill-btn">Internships</a></li>
     </ul>
   </div>
 
   <div class = "introduction">
-    <p>This site is currently being developed. In the meantime, hover the computer to check out my projects on Github. Or head over here: </p>
-    <a href="http://dkleinberg.wixsite.com/mysite">OldSite</a>
+    <p>This site is currently being developed. In the meantime, feel free to look around! Or hover the computer to check out my projects on Github. </p>
+    <!-- Or head over here: </p>
+    <a href="http://dkleinberg.wixsite.com/mysite">OldSite</a> -->
   </div>
 
-  <div id = "exit_veil"></div>
+  <!-- <div id = "exit_veil"></div> -->
+  <div id = "go_kart_box" onmouseover="goKartSpin()"> </div>
+  <!-- <input id = "go_kart_button" type = "image" src = "./content/Computer.png" onclick = "github()" style = "height:250px;"/> -->
 
   <div class = "focus">
     <div class = "center_content">
       <div class = "moving_content" id = "moving_content">
 
-          <input id = "computer" type = "image" src = "./Computer.png" onclick = "github()" style = "height:250px;"/>
-          <img id = "computer_backdrop" src = "./ComputerBack.png" alt="Computer" style = "height:250px;" onload="displayMessage()">
+          <input id = "computer" type = "image" src = "./content/Computer.png" onclick = "github()" style = "height:250px;"/>
+          <img id = "computer_backdrop" src = "./content/ComputerBack.png" alt="Computer" style = "height:250px;" onload="displayMessage()">
 
-          <img id = "robotics0" src = "./RoboticsBase.png" alt="Robotics" style = "width:175px;" onload="shootBall()">
-          <img id = "robotics1" src = "./Robotics1.png" alt="Robotics" style = "width:175px;">
-          <img id = "robotics2" src = "./Robotics2.png" alt="Robotics" style = "width:175px;">
-          <img id = "robotics3" src = "./Robotics3.png" alt="Robotics" style = "width:175px;">
-          <img id = "robotics4" src = "./Robotics4.png" alt="Robotics" style = "width:175px;">
+          <img id = "robotics0" src = "./content/RoboticsBase.png" alt="Robotics" style = "width:175px;" onload="shootBall()">
+          <img id = "robotics1" src = "./content/Robotics1.png" alt="Robotics" style = "width:175px;">
+          <img id = "robotics2" src = "./content/Robotics2.png" alt="Robotics" style = "width:175px;">
+          <img id = "robotics3" src = "./content/Robotics3.png" alt="Robotics" style = "width:175px;">
+          <img id = "robotics4" src = "./content/Robotics4.png" alt="Robotics" style = "width:175px;">
         
-          <img id = "go_kart_enter" src = "./MovingKart.png" alt="Go Kart" style = "width:100px;" onload="kart_enter()">
-          <img id = "go_kart_exit" src = "./MovingKartFlipped.png" alt="Go Kart" style = "width:150px;">
+          <img id = "go_kart_enter" src = "./content/MovingKart.png" alt="Go Kart" style = "width:75px;" onload="kart_enter()"> <!--or 100px-->
+          <img id = "go_kart_exit" src = "./content/MovingKartFlipped.png" alt="Go Kart" style = "width:150px;">
       </div>
     </div>
   </div>
@@ -47,7 +50,7 @@
     <p>&copy; 2017 David Kleinberg</p>
   </div>
 
-  <script src="./main.js"></script>
+  <script src="./source/main.js"></script>
 </body>
 </html>
 

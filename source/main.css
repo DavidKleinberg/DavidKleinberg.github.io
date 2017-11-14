@@ -75,23 +75,49 @@
 	font-family: "arial";
 }
 
+#go_kart_box {
+  width: 20rem;
+  height: 26rem;
+  position: absolute;
+  right: 50%;
+  /*margin-right: 22.5rem;*/
+  margin-right: 24rem;
+  background-color: #8BADE6;
+  z-index: -2;
+}
+
+#go_kart_box:hover {
+  /*box-shadow: 10px 10px 10px black;*/
+  filter: brightness(85%);
+  z-index: 1;
+}
+
 .focus {
-	padding: 5rem;
+  width: 45rem;
+  height: 20rem;
+  padding-top: 6rem;
+  padding-bottom: 0rem;
+
 	border-width: 5px;
 	border-style: solid;
 	border-color: black;
 	background-color: white;
-	width: 750px;
-	height: 300px;
-	margin: auto;
+
+  position: absolute;
+  right: 50%;
+	margin-right: -22.5rem;
 }
 .center_content {
-	height: 100%;
-	margin-bottom: 15rem;
+	display:block;
+  overflow:auto;
+  padding-bottom: 5rem;
+  padding-right: 5rem;
+	/*margin-bottom: 15rem;
+  margin-right: 5rem;*/
+
 }
 
 .moving_content {
-
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -179,12 +205,12 @@
 	margin-left: -800px;
 	top: 50%;
 	margin-top: 25px;
-	z-index: -1;
+	z-index: -1; /* or 0 to go in front of focus*/
 }
 
 #go_kart_exit {
-    position: absolute; /*relative*/
-    right: 50%;
+  position: absolute; /*relative*/
+  right: 50%;
 	margin-right: -75px;
 	top: 50%;
 	margin-top: 110px;

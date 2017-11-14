@@ -3,16 +3,22 @@ var exited = 0;
 function kart_exit() {
     var elem = document.getElementById("go_kart_exit"); 
     var pos = 0;
-    var id = setInterval(frame, 5);
+    var id = setInterval(frame, 1);
+    var delay = 0;
     function frame() {
         if (pos == window.innerWidth/2) {
-            pos = 0
-            elem.style.marginRight = pos + 'px';
-            clearInterval(id);
-            exited = 1;
-            kart_enter();
+            if (delay == 1000) {
+                pos = 0
+                elem.style.marginRight = pos + 'px';
+                clearInterval(id);
+                delay = 0;
+                exited = 1;
+                kart_enter();
+            } else {
+                delay++;
+            }
         } else {
-            pos++; 
+            pos+=1.5; 
             elem.style.marginRight = pos + 'px'; 
         }
     }
