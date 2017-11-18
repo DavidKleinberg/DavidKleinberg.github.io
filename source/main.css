@@ -106,6 +106,7 @@
   position: absolute;
   right: 50%;
 	margin-right: -22.5rem;
+  /*z-index: -2;*/
 }
 .center_content {
 	display:block;
@@ -166,14 +167,14 @@
   	z-index: 1;
 }
 
-#computer_video {
-	position: absolute; /*relative*/
+/*#computer_video {
+	position: absolute;
     left: 50%;
 	margin-left: -151px;
 	top: 50%;
 	margin-top: 16px;
 	z-index: -1;
-}
+}*/
 
 #robotics0 {
 	visibility: visible;
@@ -272,7 +273,8 @@ Periphery Pages
   margin-right: 0.5rem;
   padding: 2rem;
   margin-bottom: 4rem;
-  background: #4d314b; }
+  background: #4d314b;
+}
 
 .testbtn {
   padding: 2rem;

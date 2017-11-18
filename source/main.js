@@ -48,6 +48,17 @@ function kart_enter() {
     }
 }
 
+function kart_selector() {
+    var button = document.createElement("button");
+        button.setAttribute("src", "./content/Favicon.png");
+        button.setAttribute("height", "185.75px");
+        button.setAttribute("id", "message"+i);
+        button.setAttribute("alt", "Message");
+
+    var parent = document.getElementById("go_kart_box");
+    parent.appendChild(button);
+}
+
 function shootBall() {
     console.log("ball"); 
     var elem = null;
@@ -128,7 +139,7 @@ function playMessage() {
 function displayMessage() {
     for (var i = 1; i < 52; i++) {
         var screen = document.createElement("img");
-        screen.setAttribute("src", "./Message/Message"+i+".png");
+        screen.setAttribute("src", "./content/Message/Message"+i+".png");
         screen.setAttribute("height", "185.75px");
         screen.setAttribute("id", "message"+i);
         screen.setAttribute("alt", "Message");
