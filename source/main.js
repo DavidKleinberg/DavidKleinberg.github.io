@@ -56,7 +56,7 @@ function kart_selector() {
         button.setAttribute("alt", "CAD");
 
     var parent = document.getElementById("go_kart_box");
-    parent.appendChild(button);
+    //parent.appendChild(button);
 }
 
 function shootBall() {

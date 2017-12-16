@@ -125,6 +125,11 @@
 	margin: auto
 }
 
+.lower_content {
+  padding: 5rem;
+  margin-top: 26rem;
+}
+
 .footer {
   color: #eebc4f;
   text-align: center;
@@ -292,6 +297,10 @@ Periphery Pages
   border-radius: 10px;
   margin-left: 5rem;
   margin-right: 5rem; }
+
+/*.tile:hover {
+  background-color: black;
+}*/
 
 button[id="chess-btn"] {
   background-color: #E6968B;
