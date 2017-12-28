@@ -10,57 +10,62 @@
 .header {
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
-  	padding: 2rem 1.5rem;
+  	padding: 1rem .5rem; /*top-bottom, left-right*/
   	margin-bottom: 2rem;
 }
 
 .mainpage_logo {
 /*	background-image: url("./favicon.png");*/
 	border-radius: 100%;
-	border-width: 2px;
+	border-width: .05rem;
 	border-color: white;
 	border-style: solid;
 	/*width: 60px;
 	height: 60px;*/
 	display: block;
 /*	border-right-width: 10px;*/
-	padding-right: 7px;
-	padding-left: 7px;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	padding-right: .5rem;
+	padding-left: .5rem;
+	padding-top: .25rem;
+	padding-bottom: .25rem;
 	float: left;
 }
 
 .header-logo {
   background: #f7b7f4;
   color: #6b4669;
-  padding: .8rem;
-  font: normal 1.8rem/2.2rem 'Gobold Bold', sans-serif;
-  text-decoration: none;
+  /*padding: .8rem;*/
+  /*font: normal 1.8rem/2.2rem 'Gobold Bold', sans-serif;
+  text-decoration: none;*/
   border-radius: 100%;
   display: block;
-  float: left; }
+  float: left;
+}
 
 .header-nav {
   text-align: right;
   height: 100%;
   vertical-align: middle;
-  line-height: 55px;
+  line-height: .05rem;
 }
 
 .header-nav li {
   display: inline;
   border-style: solid;
-  border-width: 2px;
+  border-width: .075rem;
   border-color: gray;
-  padding: 4px;
-  border-radius: 5px;
+  padding-right: .2rem;
+  padding-left: .2rem;
+  padding-bottom: .1rem;
+  padding-top: .07rem;
+  border-radius: .33rem;
 }
 
 .header-nav a {
 	text-decoration: none;
 	font-family: "arial";
 	font-weight: bold;
+  font-size: .75rem;
 	color: gray;
 }
 
@@ -73,6 +78,7 @@
 .introduction p {
 	color: white;
 	font-family: "arial";
+  font-size: .65rem;
 }
 
 #go_kart_box {
@@ -93,19 +99,19 @@
 }
 
 .focus {
-  width: 45rem;
-  height: 20rem;
-  padding-top: 6rem;
+  width: 30rem;
+  height: 14rem;
+  padding-top: 4.2rem;
   padding-bottom: 0rem;
 
-	border-width: 5px;
+	border-width: .175rem;
 	border-style: solid;
 	border-color: black;
 	background-color: white;
 
   position: absolute;
   right: 50%;
-	margin-right: -22.5rem;
+	margin-right: -15rem;
   /*z-index: -2;*/
 }
 .center_content {
@@ -126,8 +132,8 @@
 }
 
 .lower_content {
-  padding: 5rem;
-  margin-top: 26rem;
+  /*padding: 5rem;*/
+  margin-top: 18.2rem; /*focus padding+height*/
 }
 
 .footer {
@@ -185,9 +191,9 @@
 	visibility: visible;
 	position: absolute;
 	right: 50%;
-	margin-right: -335px;
+	margin-right: -13.4rem;
 	top: 50%;
-	margin-top: -50px;
+	margin-top: -1.75rem;
 	z-index: 1;
 }
 
@@ -195,9 +201,9 @@
 	visibility: hidden;
 	position: absolute;
 	right: 50%;
-	margin-right: -335px;
+	margin-right: -13.4rem;
 	top: 50%;
-	margin-top: -50px;
+	margin-top: -1.75rem;
 	z-index: 1;
 }
 
@@ -210,17 +216,17 @@
     left: 50%;
 	margin-left: -800px;
 	top: 50%;
-	margin-top: 25px;
+	margin-top: .1rem;
 	z-index: -1; /* or 0 to go in front of focus*/
 }
 
 #go_kart_exit {
   position: absolute; /*relative*/
   right: 50%;
-	margin-right: -75px;
+	margin-right: -2rem;
 	top: 50%;
-	margin-top: 110px;
-	z-index: 0;
+	margin-top: 4rem;
+	z-index: 0; /*4 for testing*/
 }
 
 /*----------------------------------------------

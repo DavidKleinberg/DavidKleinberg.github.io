@@ -6,7 +6,7 @@ function kart_exit() {
     var id = setInterval(frame, 1);
     var delay = 0;
     function frame() {
-        if (pos == window.innerWidth/2) {
+        if (pos == -window.innerWidth/2) {
             if (delay == 1000) {
                 pos = 0
                 elem.style.marginRight = pos + 'px';
@@ -29,7 +29,7 @@ function kart_enter() {
     console.log(window.innerWidth);
     //var width = screen.width;  -800
     var pos = 0-window.innerWidth/2;
-    var id = setInterval(frame, 5);
+    var id = setInterval(frame, 1);
     function frame() {
         if (pos == 0) {
             exited = 0;
@@ -39,6 +39,7 @@ function kart_enter() {
                 pos = 0-window.innerWidth/2;
                 //pos = -800;
                 elem.style.marginLeft = pos + 'px';
+                exited = 0;
             }
             
         } else {
@@ -139,21 +140,24 @@ function playMessage() {
 function displayMessage() {
     for (var i = 1; i < 52; i++) {
         var screen = document.createElement("img");
-        screen.setAttribute("src", "../content/Message/Message"+i+".png");
-        screen.setAttribute("height", "185.75px");
+    screen.setAttribute("src", "../content/Message/Message"+i+".png");
+    //screen.setAttribute("src", "content/Message/Message"+i+".png");
         screen.setAttribute("id", "message"+i);
         screen.setAttribute("alt", "Message");
+        //screen.setAttribute("height", "7.42rem"); //185.5px
+
 
         // screen.style.position = "absolute";
         // screen.style.left = "0";
         // screen.style.right = "0";
         // screen.style.margin = "auto";
 
+        screen.style.height = "7.37rem";
         screen.style.position = "absolute";
-        screen.style.left = "50%";
-        screen.style.marginLeft = "-151px";
+        screen.style.right = "50%";
+        screen.style.marginRight = "-5.77rem";
         screen.style.top = "50%";
-        screen.style.marginTop = "16px";
+        screen.style.marginTop = ".7rem";
         screen.style.visibility = "hidden";
         screen.style.zIndex = "2";
 
@@ -181,12 +185,12 @@ function github() {
      window.location.href = "https://github.com/DavidKleinberg/";
 }
 
-var figure = $(".computer_video").hover( hoverVideo, hideVideo );
+// var figure = $(".computer_video").hover( hoverVideo, hideVideo );
 
-function hoverVideo(e) {  
-    $('computer_video', this).get(0).play(); 
-}
+// function hoverVideo(e) {  
+//     $('computer_video', this).get(0).play(); 
+// }
 
-function hideVideo(e) {
-    $('computer_video', this).get(0).pause(); 
-}
+// function hideVideo(e) {
+//     $('computer_video', this).get(0).pause(); 
+// }
