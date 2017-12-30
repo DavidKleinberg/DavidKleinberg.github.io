@@ -55,13 +55,13 @@
     <!--<input type="button" onclick="playChess();" value="Click Me!"/>-->
   </div>
 
-  <div class = "chess-game">
+  <div class = "chess-game" id = "chess-game">
     <p id = "chess-output" class = "chess-output"></p>
   </div>
 
-  <div class = "chess-input">
-    <input type = "text" id = "chess-input" name = "chess-input" placeholder = "Please enter your move" onkeydown = "checkInput()">
-    <p>ex: A2 A3 (moves pawn from starting position)</p>
+  <div class = "chess-input" id = "chess-input">
+    <!-- <input type = "text" id = "chess-input" name = "chess-input" placeholder = "Please enter your move" onkeydown = "checkInput()">
+    <p>ex: A2 A3 (moves pawn from starting position)</p> -->
   </div>
 
 
@@ -250,7 +250,7 @@ function initPiece(id, owner, position) {
 }
 
 function checkInput() {
-  var input = document.getElementById("chess-input");
+  var input = document.getElementById("inputField");
   if(event.keyCode == 13) {
       //window.alert("entered");
       //directUserInput();
@@ -500,6 +500,27 @@ function playChess() {
     var blackSymbol = ["\u265F", "\u265C", "\u265E", "\u265D", "\u265B", "\u265A"];
 
     setupBoard();
+
+    var mainDiv = document.getElementById("chess-game");
+    mainDiv.style.padding = "5rem";
+    mainDiv.style.background = "#4d314b";
+    mainDiv.style.textAlign = "center";
+    mainDiv.style.borderRadius = "10px";
+    mainDiv.style.marginLeft = "15rem";
+    mainDiv.style.marginRight = "15rem";
+
+    var input = document.getElementById("chess-input");
+    var inputField = document.createElement("input");
+    inputField.type = "text";
+    inputField.id = "inputField";
+    inputField.name = "chess-input";
+    inputField.placeholder = "Please enter your move";
+    inputField.addEventListener("keydown", checkInput);
+    input.appendChild(inputField);
+
+    var description = document.createElement("p");
+    description.innerHTML = "ex: A2 A3 (moves pawn from starting position)";
+    input.appendChild(description);
   
     var frame = document.createElement("div");
     frame.className = "frame";
