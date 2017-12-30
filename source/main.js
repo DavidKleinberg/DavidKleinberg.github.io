@@ -139,8 +139,8 @@ function playMessage() {
 function displayMessage() {
     for (var i = 1; i < 52; i++) {
         var screen = document.createElement("img");
-screen.setAttribute("src", "content/Message/Message"+i+".png");
-//screen.setAttribute("src", "../content/Message/Message"+i+".png");
+//screen.setAttribute("src", "content/Message/Message"+i+".png");
+screen.setAttribute("src", "../content/Message/Message"+i+".png");
         screen.setAttribute("height", "92.75px");
         screen.setAttribute("id", "message"+i);
         screen.setAttribute("alt", "Message");
