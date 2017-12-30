@@ -139,9 +139,9 @@ function playMessage() {
 function displayMessage() {
     for (var i = 1; i < 52; i++) {
         var screen = document.createElement("img");
-//screen.setAttribute("src", "content/Message/Message"+i+".png");
-screen.setAttribute("src", "../content/Message/Message"+i+".png");
-        screen.setAttribute("height", "92.75px");
+screen.setAttribute("src", "content/Message/Message"+i+".png");
+//screen.setAttribute("src", "../content/Message/Message"+i+".png");
+        //screen.setAttribute("height", "92.75px");
         screen.setAttribute("id", "message"+i);
         screen.setAttribute("alt", "Message");
 
@@ -150,6 +150,7 @@ screen.setAttribute("src", "../content/Message/Message"+i+".png");
         // screen.style.right = "0";
         // screen.style.margin = "auto";
 
+        screen.style.height = "92.75px";
         screen.style.position = "absolute";
         screen.style.left = "50%";
         screen.style.marginLeft = "-75.5px";
